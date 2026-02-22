@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Concerti & Festival</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--serve se il sito deve essere aperto da browser vecchi-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--ho tolto la barretta prima di chiudere la linea (penso non cambi)-->
+        <!-- metadato della viewport con relative info x definire lo spazio visibile-->
+        <link rel="stylesheet" href="../css/style.css"/>  
+        <link rel="stylesheet" href="../css/style2.css"/>  
+ </head>
+        <body>
+          <button onclick="scrollToTop()" class="scroll-top" id="scrollTopBtn">↑</button>
+            <script src="../js/script.js"></script> <!-- collegamento a pagina Javascript-->
+        
+               <nav class="navbar">
+                 <ul class="menu">
+                  <li class="logo-container">
+                         <img src="../images/logo.png" alt="Logo AggiornaMi" class="logo"></li>
+                         <li><a href="../home.html">HOME</a></li>
+                         <li class="hideOnMobile"><a href="#">EVENTI</a>
+                         <ul class="submenu">
+                          <li><a href="serate.html">Serate</a></li>
+                          <li><a href="aperitivi.html">Aperitivi</a></li>
+                          <li><a href="concerti.html">Concerti</a></li>
+                          <li><a href="weeks.html">Le "Weeks"</a></li>
+                          </ul>
+                          </li>
+                          <li class="hideOnMobile"><a href="#">UNIVERSITÀ</a>
+                          <ul class="submenu">
+                          <li><a href="../uni/studio.html">Luoghi studio</a></li>
+                          <li><a href="serate.html">Serate universitarie</a></li>
+                          <li><a href="../uni/gratis.html">Gratis</a></li>
+                          </ul>
+                          </li>
+                          <li class="hideOnMobile"><a href="../others/cultura.html">CULTURA</a></li>
+                          <li class="hideOnMobile"><a href="../others/info.html">INFO</a></li>
+                          <li class="hideOnMobile">
+                            <form class="search-form" action="../others/cerca.html" method="get">
+                                <input type="text" placeholder="Cerca..." name="q" class="search-input">
+                                <button type="submit" class="search-button">
+                                  <img id="searchIcon" src="../images/cercas.svg" alt="Cerca" width="26" height="26">  
+                                </button>
+                            </form>
+                        </li>
+                        <li class="hideOnMobile">
+                          <button id="themeToggle" class="theme-button" onclick="toggleTheme()" type="button">
+                          <img id="themeIcon" src="../images/moon.svg" alt="Tema scuro/chiaro" width="26" height="26">
+                          </button>
+                          </li>
+                          <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                         </ul>
+
+                      <ul class="sidebar">
+                      <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                      <form class="search-form" action="../others/cerca.html" method="get">
+                        <input type="text" placeholder="Cerca..." name="q" class="search-input">
+                        <button type="submit" class="search-button">
+                          <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+                        </button>
+                    </form>
+                      <li class="sid"><a href="#">EVENTI</a>
+                        <ul class="submenu2">
+                          <li><a href="serate.html">Serate</a></li>
+                          <li><a href="aperitivi.html">Aperitivi</a></li>
+                          <li><a href="concerti.html">Concerti</a></li>
+                          <li><a href="weeks.html">Le Weeks</a></li>
+                          </ul>
+                      </li>
+                      <li class="sid"><a href="#">UNIVERSITÀ</a>
+                        <ul class="submenu2">
+                          <li><a href="../uni/studio.html">Luoghi studio</a></li>
+                          <li><a href="serate.html">Serate universitarie</a></li>
+                          <li><a href="../uni/gratis.html">Gratis</a></li>
+                          </ul>
+                      </li>
+                      <li class="sid"><a href="../others/cultura.html">CULTURA</a></li>
+                      <li class="sid"><a href="../others/info.html">INFO</a></li>
+                      <button onclick="toggleTheme()" class="theme-toggle-mobile">
+                          <img id="themeIconMobile" src="../images/moon.svg" alt="Tema" width="26" height="26">
+                          </button>
+                      </ul>
+                </nav>
+
+<main>
+
+                <h1>Concerti & Festival</h1>
+  
+  <section class="blocco-testo-immagine">
+    <div class="testo">
+               
+                <h2 id="parola1">I-Days</h2>
+                <p>Quando <br>
+                  Data/e: Maggio 2025 - Luglio 2025
+                  </p>
+
+                  <p> Dove <br>
+                    Ippodromi SNAI San Siro e La Maura <br>
+                    <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x4786c1bd4f792dd7:0x9bfcbabad17bfec?sa=X&ved=1t:8290&ictx=111"
+                    target="_blank">Piazzale dello Sport, 16, 20151 Milano MI</a>  <br>
+                    <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x4786c1c53cfb5a3f:0xe07ca9b946de736b?sa=X&ved=1t:8290&ictx=111"
+                    target="_blank"> Via Lampugnano, 95, 20151 Milano MI </a>
+                    </p>
+
+                    <p>Prezzo: da € 60</p>
+
+                    <p>Per altre informazioni: <a href="https://idays.it/"> https://idays.it/ </a>
+                      </p>
+
+    </div>
+      <div class="immagine">
+          <img src="../img/line_up_1080x1350_(1)-1743770946044.jpg" alt="I-Days">
+      </div>
+  </section>
+
+  <section class="blocco-testo-immagine">
+    <div class="testo">
+                <h2>Stadio Meazza San Siro</h2>   
+                <p>Quando <br>
+                  Data/e: Giugno 2025 - Luglio 2025
+                  </p>  
+                  
+                  <p>Dove <br>
+                    Stadio San Siro <br>
+                    <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x4786c193fa23f19d:0x9c7d30c7aeff312?sa=X&ved=1t:8290&ictx=111"
+                    target="_blank"> Piazzale Angelo Moratti, 20151 Milano MI </a>
+                    </p>
+
+                    <p>Prezzo: variabile (dipende dall'evento e dai posti disponibili) </p>
+
+                    <p>Per scoprire i concerti e le date controlla il <a href="https://www.sansirostadium.com/live/I-grandi-concerti-di-San-Siro"
+                      target="_blank">calendario</a> sul sito ufficiale</p>
+
+    </div>
+      <div class="immagine">
+        <img src="../img/concerto-san-siro-vasco-rossi-2022.jpg.avif" alt="Assago Forum">
+      </div>
+  </section>
+
+  <section class="blocco-testo-immagine">
+    <div class="testo">
+                <h2>Unipol Forum di Assago</h2> 
+                <p>Quando <br>
+                  Data/e: Aprile 2025 - Luglio 2025
+                  </p>     
+
+                  <p>Dove <br>
+                    Unipol Forum di Assago <br>
+                    <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x4786c3087f24ab5d:0x6cbf33cb191a7f9b?sa=X&ved=1t:8290&ictx=111"
+                    target="_blank"> Via Giuseppe di Vittorio, 6, 20057 Assago MI</a>
+                    </p>
+
+                    <p>Prezzo: variabile (dipende dall'evento e dai posti disponibili) </p>
+
+                    <p>Per scoprire i concerti e le date controlla il <a href="https://www.unipolforum.it/it/"
+                      target="_blank">calendario</a> sul sito ufficiale</p>
+
+    </div>
+      <div class="immagine">
+        <img src="../img/large_foto-pinguini-tattici-nucleari-forum-8-aprile-2024-prandoni-09612.jpg.avif" alt="Assago Forum">
+      </div>
+  </section>
+
+  <section class="blocco-testo-immagine">
+    <div class="testo">
+                <h2>Fiera Milano Live 2025</h2>  
+                <p>Quando <br>
+                  Data/e: Giugno 2025 - Settembre 2025
+                  </p>    
+
+                  <p>Dove <br>
+                    Rho Fiera Milano <br>
+                    
+                   <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x4786eadd7f316d8f:0x53b06f34dffa3b19?sa=X&ved=1t:8290&ictx=111"
+                   target="_blank"> Strada Statale Sempione, 28, 20017 Rho MI </a>
+                    </p>
+
+                    <p>Prezzo: variabile (dipende dall'evento e dai posti disponibili) </p>
+
+                    <p>Per scoprire i concerti e le date controlla il <a href="https://fieramilanolive.com/"
+                      target="_blank">calendario</a> sul sito ufficiale</p>
+    </div>
+      <div class="immagine">
+        <img src="../img/FML25-4.jpg" alt="Fiera Milano Live">
+      </div>
+  </section>
+                
+</main>      
+
+<footer>
+  <p>&copy; <!--serve per il simbolino del copyright-->
+    2025 aggiornaMi | Tutti i diritti riservati</p>
+  <p>Contattaci: info@aggiornami.it</p>
+  <a href="../others/autori.html" class="no-rosa">Irene Massignani & Rebecca Bassani</a>
+</footer>
+
+             <script>
+                function showSidebar(){
+                  const sidebar = document.querySelector('.sidebar')
+                  sidebar.style.display = 'flex'  
+                } 
+                function hideSidebar(){
+                    const sidebar = document.querySelector('.sidebar')
+                    sidebar.style.display = 'none'     
+                }
+               </script>
+
+
+        </body>
+</html>

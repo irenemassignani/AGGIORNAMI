@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Spazi studio</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--serve se il sito deve essere aperto da browser vecchi-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--ho tolto la barretta prima di chiudere la linea (penso non cambi)-->
+        <!-- metadato della viewport con relative info x definire lo spazio visibile-->
+        <link rel="stylesheet" href="../css/style.css"> 
+        <link rel="stylesheet" href="../css/style2.css"/> 
+ </head>
+        <body>
+          <button onclick="scrollToTop()" class="scroll-top" id="scrollTopBtn">↑</button>
+          <script src="../js/script.js"></script> <!-- collegamento a pagina Javascript-->
+        
+               <nav class="navbar">
+                 <ul class="menu">
+                  <li class="logo-container">
+                         <img src="../images/logo.png" alt="Logo AggiornaMi" class="logo"></li>
+                         <li><a href="../home.html">HOME</a></li>
+                         <li class="hideOnMobile"><a href="#">EVENTI</a>
+                         <ul class="submenu">
+                          <li><a href="../eventi/serate.html">Serate</a></li>
+                          <li><a href="../eventi/aperitivi.html">Aperitivi</a></li>
+                          <li><a href="../eventi/concerti.html">Concerti</a></li>
+                          <li><a href="../eventi/weeks.html">Le "Weeks"</a></li>
+                          </ul>
+                          </li>
+                          <li class="hideOnMobile"><a href="#">UNIVERSITÀ</a>
+                          <ul class="submenu">
+                            <li><a href="studio.html">Luoghi studio</a></li>
+                            <li><a href="../eventi/serate.html">Serate universitarie</a></li>
+                            <li><a href="gratis.html">Gratis</a></li>
+                          </ul>
+                          </li>
+                          <li class="hideOnMobile"><a href="../others/cultura.html">CULTURA</a></li>
+                          <li class="hideOnMobile"><a href="../others/info.html">INFO</a></li>
+                          <li class="hideOnMobile">
+                            <form class="search-form" action="../others/cerca.html" method="get">
+                                <input type="text" placeholder="Cerca..." name="q" class="search-input">
+                                <button type="submit" class="search-button">
+                                  <img id="searchIcon" src="../images/cercas.svg" alt="Cerca" width="26" height="26">  
+                                </button>
+                            </form>
+                        </li>
+                         <li class="hideOnMobile">
+                          <button id="themeToggle" class="theme-button" onclick="toggleTheme()" type="button">
+                          <img id="themeIcon" src="../images/moon.svg" alt="Tema scuro/chiaro" width="26" height="26">
+                          </button>
+                          </li>
+                          <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                         </ul>
+
+                      <ul class="sidebar">
+                      <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                      <form class="search-form" action="../others/cerca.html" method="get">
+                        <input type="text" placeholder="Cerca..." name="q" class="search-input">
+                        <button type="submit" class="search-button">
+                           <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+                        </button>
+                    </form>
+                      <li class="sid"><a href="#">EVENTI</a>
+                        <ul class="submenu2">
+                          <li><a href="../eventi/serate.html">Serate</a></li>
+                          <li><a href="../eventi/aperitivi.html">Aperitivi</a></li>
+                          <li><a href="../eventi/concerti.html">Concerti</a></li>
+                          <li><a href="../eventi/weeks.html">Le "Weeks"</a></li>
+                          </ul>
+                      </li>
+                      <li class="sid"><a href="#">UNIVERSITÀ</a>
+                        <ul class="submenu2">
+                          <li><a href="studio.html">Luoghi studio</a></li>
+                          <li><a href="../eventi/serate.html">Serate universitarie</a></li>
+                          <li><a href="gratis.html">Gratis</a></li>
+                          </ul>
+                      </li>
+                      <li class="sid"><a href="../others/cultura.html">CULTURA</a></li>
+                      <li class="sid"><a href="../others/info.html">INFO</a></li>
+                      <button onclick="toggleTheme()" class="theme-toggle-mobile">
+                          <img id="themeIconMobile" src="../images/moon.svg" alt="Tema" width="26" height="26">
+                          </button>
+                          </li>
+                    </ul>
+                </nav>
+
+<main>
+                <h1>Spazi per studiare</h1>
+
+   <section class="blocco-testo-immagine">
+    <div class="testo">
+                <h2 id="parola6">Fuorimano</h2>
+                <p>Fuorimano è un luogo perfetto per studiare, fare smartworking o co-working e molto altro. Prenotandoti potrai, con una 
+                  consumazione obbligatoria, fermarti a studiare per tutto il tempo che necessiti. Avrai a disposizione prese elettriche, 
+                  Wi-Fi gratuito e un posto comodo e silenzioso. Prendi in considerazione di fermarti per pranzo, l'acqua è offerta da loro! <br>
+                  Si trova in una posizione decentrata (siamo tra Greco, Bicocca e Ca’ Granda) hanno fatto il loro biglietto da visita. 
+                  Fuorimano (sottotitolo OTBP che sta per “Off the beaten path”, fuori dai sentieri battuti) è un locale informale e di 
+                  carattere, spazioso e perfetto per le uscite con tanti amici, nato nel 2015 in un capannone industriale arredato con pezzi 
+                  di recupero e modernariato, piante e colori. Nel menu spiccano hamburger e pizze gourmet, e nel weekend c’è anche il brunch 
+                  (25 euro). Ma si può anche fare un abbondante aperitivo (vengono serviti al tavolo mini hamburger, pizza e snack vari, 16 euro) 
+                  o bere qualcosa. Per chi ama giocare, ci sono a disposizione un videogame cabinato anni 90 con i classici giochi da bar, una 
+                  ventina di giochi in scatola e mazzi di carte. Nella bella stagione, sorprendono i cortili nascosti (ce ne è anche uno con 
+                  piscina) con tanti tavolini all’aperto. Le prenotazioni possono essere fatte solo online con un sistema poco flessibile.</p>
+
+                <div class="info-box">
+                <p>Dove | <a href="https://www.google.com/maps/dir//Via+Roberto+Cozzi,+3,+20126+Milano+MI/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x4786c730cc48c00b:0x701d614a27c3cbfb?sa=X&ved=1t:707&ictx=111"
+                  target="_blank"> Via Roberto Cozzi 3, Milano</a> <br>
+                  Do - Gio 09.00 - 01.00 / Ve e Sa: 09.00 - 02.00 <br>
+                  Wi-fi veloce, prese elettriche, postazioni singole o condivise, bistrot <br>
+                  <a href="https://www.fuorima.no/" target="_blank"> Sito </a>
+                  </p>
+                </div>
+    </div>
+    <div class="immagine">
+      <img src="../img/Fuorimano-spazi-dettagli-ottobre2023-85-scaled.jpg" alt="Fuorimano">
+    </div>
+  </section>
+
+  <section class="blocco-testo-immagine">
+    <div class="testo">
+                <h2 id="parola7">Upcycle Milano bike cafè</h2>
+                <p>Con un’estetica rigorosamente garagista, Upcycle Milano è il luogo in cui tutto scorre lento, o comunque senza quella 
+                  fretta che imperversa per tutta la città. Arrivi quando vuoi, prendi posto e poi scegli cosa ordinare. Perchè sì 
+                  – la consumazione è obbligatoria – ma avrete in cambio Wi-Fi gratuito, prese per la corrente e refill di acqua illimitato. 
+                  Un consiglio spassionato poi è anche quello di prolungare la vostra permanenza per una pausa pranzo, per provare la 
+                  loro cucina in tipico stile nord-europeo… che con la stagione invernale che si avvicina è proprio il match perfetto!</p>
+
+                <div class="info-box">
+                  <p>Dove | <a href="#"
+                    target="_blank"> Via Andrea Maria Ampère, 59</a> <br>
+                    Lu – Ve | 9.00 – 12.00 / 15.00 – 18.00 <br>
+                    Wi-fi gratuito, postazioni con prese elettriche, caffè e refill di acqua illimitato <br>
+                    <a href="https://upcyclecafe.it/" target="_blank"> Sito </a>
+                    </p>
+                </div>  
+              </div>
+    <div class="immagine">
+      <img src="../img/unspecified-2.jpg" alt="Upcycle Milano bike cafè">
+    </div>
+  </section>  
+
+  <section class="blocco-testo-immagine">
+    <div class="testo">
+                <h2 id="parola8">Combo</h2>
+                <p>Non potevamo non nominare Combo Milano in questa lista. Gli spazi di Combo Milano sono un ottimo rifugio sia per studiare 
+                  che per lavorare. <br>
+                  Situato nel cuore dei Navigli, questo spazio è tante cose. Oltre ad essere un ostello, è anche luogo in cui fare coworking 
+                  (ci sono tre formule coworking a seconda del tempo di permanenza) o in cui concedersi un aperitivo con gli amici. 
+                  Le postazioni non sono molte, ma tutte quante sono dotate di prese per la corrente e il Wi-Fi è gratuito e presente in tutta 
+                  la struttura. Con una grande veranda e un cortile interno, nelle giornate calde e di sole è possibile sfruttare anche gli 
+                  spazi esterni. Unico problema (che accomuna un po’ tutte le strutture di Combo): il limite di tempo. Dalle 17.30 il coworking 
+                  finisce e si passa direttamente all’aperitivo. Il che va benissimo, insomma un aperitivo non si rifiuta mai! Tranne quando 
+                  dovete lavorare fino a tardi per dei progetti o delle consegne imminenti.</p>
+
+                <div class="info-box">
+                    <p>Dove | <a href="#"
+                      target="_blank">Ripa di Porta Ticinese, 83</a> <br>
+                      Lu – Do | 9.00 – 17.30 <br>
+                      Wi-fi gratuito, postazioni con prese elettriche, caffè e e refill d’acqua <br>
+                      <a href="http://thisiscombo.com/location/milano/" target="_blank">Sito</a> | 
+                      <a href="https://le-strade.com/combo-milano-luogo-dincontro-e-di-viaggio/" target="_blank"></a> Scopri di più
+                      </p>
+                </div> 
+    </div>
+    <div class="immagine">
+      <img src="../img/77203387_617349149003855_2455778689724448768_o.jpg" alt="Combo">
+    </div>
+  </section>      
+
+  <section class="blocco-testo-immagine">
+    <div class="testo">
+                <h2 id="parola9">Open</h2>
+                <p>Classic lover non temete, ne abbiamo anche per voi! <br>
+                  Se siete amanti del design, dei colori tenui e della luce naturale Open Milano vi saprà accogliere come si deve. A due passi 
+                  da Porta Romana, in questo spazio troverete una vasta scelta di postazioni tutte super home-feeling, Wi-Fi ad alta velocità e 
+                  prese elettriche per ogni postazione. Il bello di questo posto è che durante la stagione estiva è possibile sfruttare le aree 
+                  all’aperto tra cui la terrazza e la zona relax. Il bistrot invece, quello è perfetto in tutte le stagioni! <br>
+                  E ai più curiosi suggerisco di dare un’occhiata al loro calendario degli eventi: vi divertirete spaziando tra degustazioni, 
+                  benessere e incontri culturali.</p>
+
+                <div class="info-box">      
+                      <p>Dove | <a href="#"
+                        target="_blank"> Viale Monte Nero, 6 </a> <br>
+                        Lu – Ve | 8.30 – 18.30 <br>
+                        Wi-fi veloce, prese elettriche, postazioni singole o condivise, bistrot <br>
+                        <a href="https://openmilano.com/coworking/" target="_blank">Sito</a>
+                        </p>
+                </div> 
+    </div>
+    <div class="immagine">
+      <img src="../img/coworking3.jpg" alt="Open">
+    </div>
+  </section>        
+
+  <section class="blocco-testo-immagine">
+    <div class="testo">
+                <h2 id="parola10">Da oTTo</h2>
+                <p>oTTo è una vera chicca nel cuore di China Town. Un locale che vi accoglierà in pieno stile naturale con spazi ampi e luminosi, 
+                  colori tenui e piante che spuntano dovunque. Ma il meglio deve ancora venire: il Wi-Fi è gratuito, l’atmosfera è rilassata e 
+                  silenziosa e permette di concentrarsi in pace, e la caffetteria propone sapori fluidi e internazionali per calarsi a pieno nel 
+                  mood di oTTo già dal primo sorso di caffè. Purtroppo però l’uso dei computer non è consentito durante tutte le ore della giornata. 
+                  Rimane comunque un ottimo posto dove poter lavorare anche solo qualche ora al pomeriggio. Oppure perchè no, ci si può fermare 
+                  direttamente a pranzo. I piatti sono semplici e veloci, ma davvero gustosi (e instagrammabili)!</p>
+
+                <div class="info-box">
+                        <p>Dove | <a href="#"
+                          target="_blank"> Via Paolo Sarpi, 10 </a> <br>
+                          Lu – Ve | 15.00 – 18.00 (come orario per il coworking e senza prenotazione) <br>
+                          Wi-fi, prese elettriche (non tantissime) <br>
+                          <a href="https://www.otto.place/" target="_blank">Sito</a>
+                          </p>
+                </div> 
+    </div>
+    <div class="immagine">
+      <img src="../img/sarpi-oTTo-milano-piante.jpg" alt="Upcycle Milano bike cafè">
+    </div>
+</section> 
+
+</main>
+
+<footer>
+  <p>&copy; <!--serve per il simbolino del copyright-->
+    2025 aggiornaMi | Tutti i diritti riservati</p>
+  <p>Contattaci: info@aggiornami.it</p>
+  <a href="../others/autori.html" class="no-rosa">Irene Massignani & Rebecca Bassani</a>
+</footer>
+
+             <script>
+                function showSidebar(){
+                  const sidebar = document.querySelector('.sidebar')
+                  sidebar.style.display = 'flex'  
+                } 
+                function hideSidebar(){
+                    const sidebar = document.querySelector('.sidebar')
+                    sidebar.style.display = 'none'     
+                }
+               </script>
+
+
+        </body>
+</html>

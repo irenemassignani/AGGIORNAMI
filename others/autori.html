@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>Chi siamo</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--serve se il sito deve essere aperto da browser vecchi-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--ho tolto la barretta prima di chiudere la linea (penso non cambi)-->
+        <!-- metadato della viewport con relative info x definire lo spazio visibile-->
+        <link rel="stylesheet" href="../css/style.css"/>  
+        <link rel="stylesheet" href="../css/style2.css"/>  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- link a Font Awesom per icone IG -->
+ </head>
+        <body>
+            <button onclick="scrollToTop()" class="scroll-top" id="scrollTopBtn">↑</button>
+            <script src="../js/script.js"></script> <!-- collegamento a pagina Javascript-->
+        
+               <nav class="navbar">
+                 <ul class="menu">
+                  <li class="logo-container">
+                         <img src="../images/logo.png" alt="Logo AggiornaMi" class="logo"></li>
+                         <li><a href="../home.html">HOME</a></li> <!--da capire perchè le sottocategorie del menù non funzionano bene-->
+                         <li class="hideOnMobile"><a href="#">EVENTI</a>
+                         <ul class="submenu">
+                          <li><a href="../eventi/serate.html">Serate</a></li>
+                          <li><a href="../eventi/aperitivi.html">Aperitivi</a></li>
+                          <li><a href="../eventi/concerti.html">Concerti</a></li>
+                          <li><a href="../eventi/weeks.html">Le "Weeks"</a></li>
+                          </ul>
+                          </li>
+                          <li class="hideOnMobile"><a href="#">UNIVERSITÀ</a>
+                          <ul class="submenu">
+                          <li><a href="../uni/studio.html">Luoghi studio</a></li>
+                          <li><a href="../eventi/serate.html">Serate universitarie</a></li>
+                          <li><a href="../uni/gratis.html">Gratis</a></li>
+                          </ul>
+                          </li>
+                          <li class="hideOnMobile"><a href="../others/cultura.html">CULTURA</a></li>
+                          <li class="hideOnMobile"><a href="../others/info.html">INFO</a></li>
+                          <li class="hideOnMobile">
+                            <form class="search-form" action="../others/cerca.html" method="get">
+                                <input type="text" placeholder="Cerca..." name="q" class="search-input">
+                                <button type="submit" class="search-button">
+                                  <img id="searchIcon" src="../images/cercas.svg" alt="Cerca" width="26" height="26">  
+                                </button>
+                            </form>
+                        </li>
+                        <li class="hideOnMobile">
+                          <button id="themeToggle" class="theme-button" onclick="toggleTheme()" type="button">
+                          <img id="themeIcon" src="../images/moon.svg" alt="Tema scuro/chiaro" width="26" height="26">
+                          </button>
+                          </li>
+                          <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                         </ul>
+
+                      <ul class="sidebar">
+                      <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                      <form class="search-form" action="../others/cerca.html" method="get">
+                        <input type="text" placeholder="Cerca..." name="q" class="search-input">
+                        <button type="submit" class="search-button">
+                          <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#1f1f1f"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+                        </button>
+                    </form>
+                      <li class="sid"><a href="#">EVENTI</a>
+                        <ul class="submenu2">
+                          <li><a href="../eventi/serate.html">Serate</a></li>
+                          <li><a href="../eventi/aperitivi.html">Aperitivi</a></li>
+                          <li><a href="../eventi/concerti.html">Concerti</a></li>
+                          <li><a href="../eventi/weeks.html">Le Weeks</a></li>
+                          </ul>
+                      </li>
+                      <li class="sid"><a href="#">UNIVERSITÀ</a>
+                        <ul class="submenu2">
+                          <li><a href="../uni/studio.html">Studio</a></li>
+                          <li><a href="../eventi/serate.html">Serate universitarie</a></li>
+                          <li><a href="../uni/gratis.html">Gratis</a></li>
+                          </ul>
+                      </li>
+                      <li class="sid"><a href="../others/cultura.html">CULTURA</a></li>
+                      <li class="sid"><a href="../others/info.html">INFO</a></li>
+                      <button onclick="toggleTheme()" class="theme-toggle-mobile">
+                          <img id="themeIconMobile" src="../images/moon.svg" alt="Tema" width="26" height="26">
+                          </button>
+                      </ul>
+                </nav>
+
+<main>
+    <h1>Chi siamo?</h1>
+    <p>Siamo due studentesse del primo anno di Design della Comunicazione al Politecnico di Milano. <br>
+        Da appena arrivate in città, ci siamo accorte di quanto Milano sia piena di cose da fare, ma anche di quanto sia facile perdersi tra le mille proposte. </p>
+        
+    <p>Così nasce AggiornaMi: una guida aggiornata (e aggiornante) pensata per studenti, fuorisede e curiosi. <br>
+        Raccogliamo eventi culturali, concerti, festival, mostre, bar carini dove studiare, ma anche nuovi locali dove fare serata o aperitivo e ti ricordiamo appuntamenti imperdibili per chi vive a Milano 
+        come la Design Week, la Fashion Week o la Beauty Week. Tutto in un unico posto, chiaro e facile da consultare. </p> 
+        
+    <p>AggiornaMi è il nostro modo per vivere meglio la città – e farla vivere anche agli altri.</p>
+
+    <div class="blocco-testo-immagine">
+  <div class="immagine">
+    <img src="../img/ire.jpg" alt="Foto Irene Massignani">
+  </div>
+  <div class="testo">
+    <h2>Irene Massignani</h2> 
+    <p>
+      Frequenta il primo anno di Design della Comunicazione al Politecnico di Milano. <br>
+      Ha una passione per il graphic design, la musica techno, le mostre interattive e i caffè nascosti dove può studiare in tranquillità. <br>
+      Per AggiornaMi si occupa della parte web e della selezione degli eventi musicali.
+    </p>
+    <a href="https://www.instagram.com/ireneemassignani/" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram fa-2x"></i> 
+      <!-- <i> è il tag usato da Font Awesome per le icone
+            class="fab" sta per "Font Awesome Brand": indica che è un'icona di un marchio
+            fa-instagram è l’icona specifica di Instagram
+            fa-2x rende l’icona più grande del normale (2 volte)-->
+    </a>
+  </div>
+</div>
+
+<div class="blocco-testo-immagine">
+  <div class="testo">
+    <h2>Rebecca Sole Bassani</h2>
+    <p> Studentessa al primo anno di Design della Comunicazione, appassionata di grafica editoriale e tipografia. <br>
+        Ama la musica live e il divertimento. Vive l'ambiente universitario con impegno, dedizione, ma anche con tanta voglia 
+        di divertirsi, conoscere ed esplorare nuovi posti a Milano (la città dove studia) con gli amici di sempre e anche con i nuovi compagni di corso. <br>
+        All'interno del progetto AggiornaMi si occupa soprattutto di curare i contenuti e l’identità visiva. Cerca di restare sempre aggiornata su 
+        ciò che di nuovo succede in città. <br>
+        Ama fare liste e fotografare insegne vintage.</p>
+        <a href="https://www.instagram.com/rebecca_solee/" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+    </div>  
+    <div class="immagine">
+    <img src="../img/reb.jpg" alt="Foto Rebecca Bassani">
+  </div>
+</div>        
+
+          <blockquote class="quote">
+            “Esci, vivi, racconta. Milano è tutto quello che ti serve.” 
+          </blockquote>       
+          
+</main>
+
+
+<footer>
+  <p>&copy; <!--serve per il simbolino del copyright-->
+    2025 aggiornaMi | Tutti i diritti riservati</p>
+  <p>Contattaci: info@aggiornami.it</p>
+  <a href="autori.html" class="no-rosa">Irene Massignani & Rebecca Bassani</a>
+</footer>
+
+             <script>
+                function showSidebar(){
+                  const sidebar = document.querySelector('.sidebar')
+                  sidebar.style.display = 'flex'  
+                } 
+                function hideSidebar(){
+                    const sidebar = document.querySelector('.sidebar')
+                    sidebar.style.display = 'none'     
+                }
+               </script>
+
+
+        </body>
+</html>

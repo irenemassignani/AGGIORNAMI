@@ -1,0 +1,701 @@
+/* --------------------- RESET E FONT --------------------- */
+body{
+    background-color: azure; /* Colore di sfondo generale della pagina */
+    font-family: Arial, Helvetica, sans-serif; /* Font sans-serif semplice */
+    font-size: 18px; /* Dimensione base del testo */
+    margin: 0; /* Elimina margini di default */
+    margin-top: 3.5rem; /* Compensa l’altezza della navbar fissa */
+}
+section {
+    padding: 1.5em 0; /* Spaziatura sopra e sotto per ogni sezione */
+}
+
+/* --------------------- NAVBAR --------------------- */
+nav{
+    background-color: pink; /* Colore rosa per lo sfondo della navbar */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); /* Leggera ombra per profondità */
+    position: fixed; /* Fissa la navbar in alto */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000; /* Valore molto alto: tiene la navbar sopra agli altri elementi */
+}
+
+nav ul{
+    list-style: none; /* Nessun pallino nella lista */
+    margin: 0;
+    padding: 0;
+}
+
+nav a:hover{
+  text-decoration: none; /* Rimuove sottolineatura al passaggio del mouse */
+}
+
+.logo-container {
+  list-style: none;
+  margin-right: 40px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center; /* Allinea logo verticalmente */
+}
+
+.logo {
+  height: 50px; /* Altezza del logo nella navbar */
+  width: auto;
+  object-fit: contain; /* Ridimensiona mantenendo proporzioni */
+}
+
+.menu {
+    display: flex;
+    justify-content: center; /* Centra il contenuto orizzontalmente */
+    align-items: center;
+    height: 3.5rem;
+}
+
+.menu a {
+    color:black;
+    text-align: center; 
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block; /* Rende cliccabile l’intera area */
+}
+
+/* --------------------- ANIMAZIONE SOTTOLINEATURA MENU --------------------- */
+/* La sottolineatura che parte dal centro è creata usando ::after sulla voce del menù principale,
+quando il mouse passa sopra, la larghezza della sottolineatura si espande da 0 a 100% */
+.menu a::after{
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #000; /* colore della sottolineatura */
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease; /* transizione per la larghezza della sottolineatura */
+}
+
+.menu a:hover::after {
+  width: 100%; /* Espansione della sottolineatura al passaggio del mouse */
+}
+
+/* --------------------- SOTTOMENU DESKTOP --------------------- */
+.hideOnMobile a:hover{
+    background-color: white; /* Evidenzia al passaggio */
+}
+
+.hideOnMobile{
+    flex-basis: 180px; /* Larghezza minima */
+    position: relative;
+}
+
+.submenu{
+    position: absolute;
+    background-color: #c0c0c0;
+    left:0;
+    width: 100%;
+    display: none; /* Inizialmente nascosto */
+    z-index: 1000; 
+}
+
+/* --------------------- EFFETTO HOVER SOTTOMENU --------------------- */
+.submenu a {
+  transition: opacity 0.3s ease, transform 0.3s ease; /* transizione per opacità e spostamento */
+}
+
+.submenu a:hover {
+  opacity: 0.7; /* Diminuzione di opacità */
+  transform: translateX(5px); /* Leggero spostamento verso destra */
+}
+
+
+.hideOnMobile:hover .submenu{
+    display: block; /* Mostra sottomenu al passaggio del mouse */
+}
+
+/* --------------------- SIDEBAR (MENU MOBILE) --------------------- */
+.sidebar{
+    position: fixed;
+    top:0;
+    right:0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background: pink;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Mostrato solo da JS su mobile */
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    /* justify-content controlla l’allineamento degli elementi figli lungo l’asse principale del flex container
+  flex-start fa sì che gli elementi vengano allineati all’inizio dell’asse principale, cioè in alto */
+}
+
+.sidebar li.sid {
+    width: 100%;
+    position: relative;
+  }
+  
+  .sidebar a {
+      width: 100%;
+      color: black;
+      text-align: center;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+  }
+  
+  .sidebar a:hover {
+      background-color: #e0e0e0;
+      color: #000;
+      transition: background-color 0.3s, color 0.3s;
+  }
+
+    .sidebar .logo {
+  height: 40px;
+  margin: 10px auto;
+  display: block;
+}
+
+    .submenu2 {
+        background-color: #c0c0c0;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+        /* elimina position: absolute */
+        position: relative; /* meglio relative o anche toglierlo */
+    }
+    
+  
+  .sid:hover .submenu2 {
+      max-height: 500px; /* Espansione verticale su hover */
+  }
+  
+.menu-button{
+    display: none; /* Attivato da JS in mobile */
+}
+
+/* --------------------- HERO CON VIDEO --------------------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 70vh; /* Più visibilità */
+  min-height: 320px;
+  width: 100%;
+}
+
+.hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(255, 192, 203, 0.3),
+    rgba(0, 0, 0, 0.4)
+  ); /* Sfuma sopra al video */
+  z-index: 1;
+}
+
+.hero-text h4 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 2;
+  text-align: center;
+  background-color: rgba(255, 192, 203, 0.25);
+  padding: 12px 24px;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  width: 90%;
+  max-width: 600px;
+}
+
+/* --------------------- CAROUSEL --------------------- */
+/* Contenitore principale del carosello */  
+.carousel-wrapper {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto;  /* Centra il contenitore con margine sopra e sotto */
+    position: relative;
+  }
+
+  /* Area scrollabile del carosello */
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none; /* Nasconde la scrollbar */
+  }
+
+  .carousel-item {
+    position: relative;
+    flex: 0 0 auto; /* Impedisce il ridimensionamento automatico */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: auto;
+    height: 200px;
+  }
+
+  .carousel-item img {
+    width: auto;
+    display: block;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  /* Serve per evitare che padding e border si sommino alle dimensioni dichiarate */
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+.carousel {
+overflow-x: scroll;
+overflow-y: hidden;
+}
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 30px;
+    padding: 5px 10px;
+    cursor: pointer;   /* Serve per indicare un elemento cliccabile */
+    z-index: 10;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .arrow.left {
+    left: -10px;
+  }
+
+  .arrow.right {
+    right: -10px;
+  }
+
+/* --------------------- IMMAGINI CON TESTO HOVER --------------------- */
+.image-hover-container {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: 200px;
+}
+
+.image-hover-container img {
+  display: block;
+  width: auto;
+  height: 200px;
+  transition: opacity 0.3s ease;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+  font-size: 1em;
+  text-align: center;
+}
+
+.image-hover-container:hover img {
+  opacity: 0.5;
+}
+
+.image-hover-container:hover .overlay-text {
+  opacity: 1;
+}
+
+/* --------------------- INFOBOX / QUOTE --------------------- */
+  .info-box {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-left: 5px solid #c0c0c0;
+    border-radius: 10px;
+    margin: 30px 0;
+  }
+
+  .quote {
+    font-style: italic;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-left: 5px solid pink;
+    margin: 40px 0;
+  }
+
+/* --------------------- MAIN CONTENT --------------------- */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  /* Animazione */
+  @keyframes fadeIn {
+
+     /* Stato iniziale dell'animazione */
+    from { opacity: 0; /* L'elemento è completamente trasparente */
+      transform: translateY(10px); } /* Viene spostato verso il basso di 10px */
+
+      /* Stato finale dell'animazione */
+    to { opacity: 1; /* L'elemento diventa completamente visibile */
+      transform: translateY(0); } /* Torna alla sua posizione originale */
+  }
+  
+/* --------------------- TITOLI --------------------- */
+  h1 {
+    font-size: 2.2rem;
+    color: #111;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+    color: rgb(249, 175, 187);
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  
+/* --------------------- TESTO E LINK --------------------- */
+  p, ul {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  ul li {
+    margin-bottom: 8px;
+  }
+  
+  /* Link colorati e con sottolineatura al passaggio */
+  a {
+    color: rgb(157, 128, 138);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+ /* Link chiari (es: su sfondo scuro) */
+  a.no-rosa {
+    color: white;
+    text-decoration: none;
+  }
+  
+  a.no-rosa:hover {
+    text-decoration: underline;
+  }
+
+/* --------------------- BLOCCHI IMMAGINE + TESTO --------------------- */
+/* Per impostare le immagini in maniera ordinata e allineata al blocco di testo*/
+.blocco-testo-immagine {
+    display: flex;
+    align-items: stretch; /* fondamentale: fa sì che entrambi i blocchi abbiano la stessa altezza */
+    gap: 20px; /* Aggiunge 20 pixel di spazio tra i figli diretti del contenitore */
+    margin-bottom: 40px;
+  }
+  
+  .testo {
+    flex: 1;
+  }
+  
+  .immagine {
+    flex-shrink: 0;
+    width: 350px; /* larghezza */
+  }
+  
+  .immagine img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Blocco centrato con immagine */
+  .blocco2 {
+    text-align: center; /* centra il contenuto orizzontalmente */
+    margin-bottom: 2rem; /* spazio sotto ogni blocco */
+  }
+  
+  .blocco2 img {
+    width: 400px;         /* larghezza fissa */
+    height: auto;         /* mantieni proporzioni */
+    margin-top: 10px;     /* spazio sopra l'immagine */
+    border-radius: 15px;  /* arrotonda gli angoli */
+  }
+
+ /* --------------------- ICONE INSTAGRAM --------------------- */
+  a i {
+    color: #e1306c;
+    transition: transform 0.3s ease;
+  }
+  
+ a i:hover {
+    transform: scale(1.2); /* Ιngrandisce al passaggio del mouse */
+  }
+
+/* --------------------- FOOTER E STRUTTURA --------------------- */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  }
+  
+  main{
+    flex: 1;
+  }
+  /* spinge il footer verso il basso anche se c'è poco contenuto, ma non lo fissa alla pagina*/ 
+footer {
+    background-color: #1f1f1f;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 50px;
+}
+
+/* --------------------- BARRA DI RICERCA --------------------- */
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+.sidebar .search-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.sidebar .search-input {
+  width: 70%;
+  max-width: 200px;
+}
+
+.sidebar .search-button {
+  margin-left: 5px;
+}
+
+/* --------------------- COOKIE POPUP --------------------- */
+.cookie-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  color: #333;
+  padding: 24px 32px;
+  border-radius: 8px; /* rende gli angoli arrotondati*/
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  display: none; /* sarà attivato da JS */
+}
+
+.cookie-popup button {
+  margin-top: 16px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer; /* Quando passi il mouse sopra il bottone, il cursore cambia da freccia a manina
+  così l’utente capisce che può cliccarci sopra */
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.cookie-popup button:hover {
+  background-color: #0056b3;
+}
+
+/* Button che compare quando si scorre verso il basso e che riporta all'inizio della pagina*/
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  font-size: 18px;
+  background-color: pink;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Classe attiva del bottone "scroll-top":
+   lo rende visibile e cliccabile */
+.scroll-top.show {
+  opacity: 1; /* visibilità piena */
+  pointer-events: auto; /* abilitati click e interazioni */
+}
+
+.scroll-top:hover {
+  background-color: palevioletred;
+}
+
+
+/* MEDIA QUERIES*/ 
+/*per adattare le immagini alla dimensione dello schermo*/
+
+/* Media Query per schermi piccoli (fino a 1024px)*/
+@media (max-width: 1024px) { 
+/* Viene usata la regola @media per includere un blocco di stile CSS che è valido solo se la condizione è vera*/
+    .blocco-testo-immagine {
+      flex-direction: column; /* Impila gli elementi verticalmente */
+      align-items:normal; /* Allineamento standard (utile per dispositivi mobili) */
+      text-align: normal; /* Allineamento del testo normale */
+    }
+  
+    .immagine {
+      width: 100%; /* L’immagine occupa tutta la larghezza disponibile */
+      height: auto; /* Altezza automatica per mantenere le proporzioni */
+      margin-top: 20px; /* Spazio sopra l’immagine */
+    }
+  
+    .immagine img {
+      width: 100%;
+      height: auto;
+      object-fit: cover; /* L’immagine copre il contenitore senza deformarsi */
+    }
+  }
+
+/* Home page responsive (fino a 768px) */  
+  @media (max-width: 768px) {
+    .hero-text h1 {
+      font-size: 1.2rem; /* Riduce la dimensione del titolo */
+      padding: 0 10px; /* Aggiunge spazio laterale */
+    }
+  
+    .hero-text {
+      padding: 8px 16px; /* Padding generale ridotto */
+    }
+  }
+
+/* Quote e main (768px) */
+  @media screen and (max-width: 768px) {
+    .quote {
+      font-size: 0.9rem; /* Testo più piccolo per schermi piccoli */
+      padding: 16px; /* Spaziatura interna */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    main {
+      padding: 20px; /* Spaziatura attorno al contenuto principale */
+    }
+  }
+
+/* carosello telefono */
+@media screen and (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 90%; /* Ogni item occupa il 90% della larghezza visibile */
+    max-width: 100%; /* Massima larghezza consentita */
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto; /* Immagini responsive */
+  }
+
+  .img-link img {
+    width: 100%;
+    height: auto;
+  }
+
+  .overlay-text {
+    font-size: 0.9rem; /* Testo dell’overlay più piccolo */
+    padding: 8px 12px;
+  }
+}
+
+/* cookie pop-up*/
+@media screen and (max-width: 768px) {
+  .cookie-popup {
+    width: 70%; /* Popup più stretto su mobile */
+    padding: 15px; /* Padding interno */
+    font-size: 14px;  /* Testo più leggibile su schermi piccoli */
+  }
+
+  .cookie-popup button {
+    padding: 8px 16px;  /* Dimensioni pulsante adattate */
+    font-size: 14px;
+  }
+}
+
+/* menù resposive (mobile) */
+@media(max-width: 800px){
+    .hideOnMobile{
+        display: none;  /* Nasconde elementi non essenziali su mobile */
+    }
+    .menu-button{
+        display: block; /* Mostra il bottone hamburger per il menù */
+    }
+}
+
+@media(max-width: 400px){
+    .sidebar{
+        width: 100%; /* Sidebar prende tutta la larghezza disponibile */
+    }
+}
