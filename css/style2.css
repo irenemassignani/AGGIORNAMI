@@ -157,7 +157,7 @@ body.dark-mode main {
   background-color: #2b2b2d; /* grigio scuro elegante */
   color: var(--text-color);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* ombra interna */
-  max-width: 1400px;
+  max-width: 1000px;
 }
 
 /* ============================
