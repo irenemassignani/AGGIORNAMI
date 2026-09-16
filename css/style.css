@@ -358,8 +358,7 @@ overflow-y: hidden;
 
 /* --------------------- MAIN CONTENT --------------------- */
 main {
-    width: 100%;
-    max-width: 100%;
+    max-width: 1400px;
     margin: 40px auto;
     background: white;
     padding: 40px;
