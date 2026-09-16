@@ -162,7 +162,7 @@ Politecnico di Milano
 
 Per domande, collaborazioni o approfondimenti sul progetto:
 
-- Email: irene.massignani@mail.polimi.it & bassanirebecca@gmail.com 
+- Email: irenemassignani05@gmail.com & bassanirebecca@gmail.com 
 - GitHub: https://github.com/irenemassignani & https://github.com/rebeccasole-design
 
 Siamo disponibili per confronti, feedback o per raccontare più nel dettaglio il processo progettuale e tecnico dietro AggiornaMi.
